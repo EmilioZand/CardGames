@@ -5,7 +5,7 @@ class Game
   TABLE_SIZE = 8
   HAND_SIZE = 5
 
-  attr_reader :deck, :players
+  attr_accessor :deck, :players
 
   def initialize
     @deck = Deck.new()
@@ -19,7 +19,7 @@ class Game
   def deal
     HAND_SIZE.times do
       @players.each do |player|
-        player.hand << @deck.pop
+        player.hand << @deck.draw
       end
     end
   end

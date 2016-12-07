@@ -16,6 +16,10 @@ class Deck
     @cards.shuffle!
   end
 
+  def draw
+    @cards.pop
+  end
+
   def to_s
     @cards.each do |card|
       "#{card.to_s}\n"
